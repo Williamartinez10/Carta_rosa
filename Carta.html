@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Una carta para ti 🌹</title>
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;font-family:Georgia,"Times New Roman",serif}
+body{
+  background:radial-gradient(circle at 50% 35%,#fff4f5 0%,#ffd9df 38%,#f4a9b5 100%);
+  display:flex;align-items:center;justify-content:center;color:#4d1720;
+}
+.scene{position:relative;width:100%;height:100%;overflow:hidden}
+.glow{
+  position:absolute;left:50%;top:43%;transform:translate(-50%,-50%);
+  width:420px;height:420px;border-radius:50%;
+  background:rgba(255,255,255,.28);filter:blur(35px);
+}
+.ground{
+  position:absolute;bottom:-90px;left:50%;transform:translateX(-50%);
+  width:650px;height:180px;border-radius:50%;
+  background:rgba(116,20,35,.12);filter:blur(20px);
+}
+.stem{
+  position:absolute;left:50%;top:40%;width:8px;height:330px;
+  background:linear-gradient(90deg,#246b35,#58a34c,#1e5d2d);
+  border-radius:10px;transform:translateX(-50%);
+  transform-origin:top;animation:sway 4s ease-in-out infinite;
+}
+.leaf{
+  position:absolute;width:95px;height:45px;background:linear-gradient(135deg,#3b8d42,#175c2c);
+  border-radius:100% 0 100% 0;
+}
+.leaf.l{left:calc(50% - 88px);top:62%;transform:rotate(-25deg)}
+.leaf.r{left:50%;top:55%;transform:rotate(25deg) scaleX(-1)}
+.flower{
+  position:absolute;left:50%;top:40%;width:270px;height:270px;
+  transform:translate(-50%,-50%);animation:bloom 3s ease-in-out infinite alternate;
+}
+.petal{
+  position:absolute;left:50%;top:50%;width:105px;height:145px;
+  background:linear-gradient(145deg,#ff5262,#c90825 65%,#7d0015);
+  border-radius:70% 70% 45% 45%;transform-origin:50% 100%;
+  box-shadow:inset -8px -12px 18px rgba(100,0,15,.18),0 4px 12px rgba(125,0,20,.18);
+}
+.p1{transform:translate(-50%,-95%) rotate(0deg)}
+.p2{transform:translate(-50%,-95%) rotate(45deg)}
+.p3{transform:translate(-50%,-95%) rotate(90deg)}
+.p4{transform:translate(-50%,-95%) rotate(135deg)}
+.p5{transform:translate(-50%,-95%) rotate(180deg)}
+.p6{transform:translate(-50%,-95%) rotate(225deg)}
+.p7{transform:translate(-50%,-95%) rotate(270deg)}
+.p8{transform:translate(-50%,-95%) rotate(315deg)}
+.center{
+  position:absolute;left:50%;top:50%;width:72px;height:72px;
+  transform:translate(-50%,-50%);border-radius:50%;
+  background:radial-gradient(circle,#ffd34e 0 18%,#9e5a00 20% 35%,#5b2500 38% 100%);
+  box-shadow:0 0 0 8px rgba(255,178,35,.18);
+}
+.petal:after{
+  content:"";position:absolute;left:20%;top:12%;width:25%;height:55%;
+  background:rgba(255,255,255,.18);border-radius:50%;filter:blur(3px);
+}
+.card{
+  position:absolute;z-index:20;left:50%;bottom:42px;transform:translateX(-50%);
+  width:min(520px,calc(100% - 32px));text-align:center;
+}
+.open{
+  border:1px solid rgba(255,255,255,.65);cursor:pointer;
+  padding:16px 34px;border-radius:50px;color:white;
+  background:linear-gradient(135deg,#9d0b24,#d5233c);
+  font-size:19px;font-weight:bold;letter-spacing:.5px;
+  box-shadow:0 10px 30px rgba(105,0,20,.3);transition:.3s;
+}
+.open:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 15px 35px rgba(105,0,20,.4)}
+.letter{
+  display:none;margin-top:15px;padding:28px;
+  max-height:55vh;overflow:auto;text-align:left;
+  background:rgba(255,250,247,.96);border-radius:22px;
+  box-shadow:0 15px 50px rgba(70,0,15,.28);
+  animation:show .7s ease forwards;
+}
+.letter h2{text-align:center;color:#9d0b24;margin-top:0}
+.letter p{font-size:17px;line-height:1.7;margin:10px 0}
+.close{display:block;margin:18px auto 0;border:0;background:#9d0b24;color:white;padding:9px 20px;border-radius:20px;cursor:pointer}
+.heart{position:absolute;color:#b70b27;font-size:18px;animation:float linear infinite;opacity:.65}
+@keyframes sway{0%,100%{transform:translateX(-50%) rotate(-2deg)}50%{transform:translateX(-50%) rotate(2deg)}}
+@keyframes bloom{from{transform:translate(-50%,-50%) scale(.96)}to{transform:translate(-50%,-50%) scale(1.03)}}
+@keyframes show{from{opacity:0;transform:translateY(20px) scale(.96)}to{opacity:1;transform:none}}
+@keyframes float{from{transform:translateY(110vh) rotate(0deg);opacity:0}15%{opacity:.7}to{transform:translateY(-15vh) rotate(360deg);opacity:0}}
+@media(max-width:600px){
+ .flower{width:220px;height:220px}.petal{width:85px;height:120px}
+ .stem{top:39%;height:310px}.letter{max-height:52vh;padding:22px}
+ .letter p{font-size:15px}
+}
+</style>
+</head>
+<body>
+<div class="scene">
+  <div class="glow"></div><div class="ground"></div>
+
+  <div class="heart" style="left:8%;animation-duration:10s">♥</div>
+  <div class="heart" style="left:20%;animation-duration:13s;animation-delay:2s">♥</div>
+  <div class="heart" style="left:78%;animation-duration:11s;animation-delay:4s">♥</div>
+  <div class="heart" style="left:90%;animation-duration:14s;animation-delay:1s">♥</div>
+
+  <div class="stem"></div>
+  <div class="leaf l"></div><div class="leaf r"></div>
+
+  <div class="flower">
+    <div class="petal p1"></div><div class="petal p2"></div>
+    <div class="petal p3"></div><div class="petal p4"></div>
+    <div class="petal p5"></div><div class="petal p6"></div>
+    <div class="petal p7"></div><div class="petal p8"></div>
+    <div class="center"></div>
+  </div>
+
+  <div class="card">
+    <button class="open" onclick="openLetter()">💌 Leer carta</button>
+    <div class="letter" id="letter">
+      <h2>Para ti ❤️</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aquí podrás escribir más adelante tu carta personalizada.</p>
+      <button class="close" onclick="closeLetter()">Cerrar carta</button>
+    </div>
+  </div>
+</div>
+
+<script>
+function openLetter(){
+  document.getElementById('letter').style.display='block';
+}
+function closeLetter(){
+  document.getElementById('letter').style.display='none';
+}
+</script>
+</body>
+</html>
